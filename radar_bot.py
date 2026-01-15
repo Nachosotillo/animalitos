@@ -15,8 +15,8 @@ INPUT_FILE = "lotto_activo_clean.csv"
 CHECK_INTERVAL_SECONDS = 300 # 5 minutes
 
 # Telegram Keys (User must set these)
-TELEGRAM_BOT_TOKEN = "YOUR_BOT_TOKEN_HERE" 
-TELEGRAM_CHAT_ID = "YOUR_CHAT_ID_HERE"
+TELEGRAM_BOT_TOKEN = "8459641995:AAEmBN3igwrkkRlVFVBUI6dTF0glxY6-a-E" 
+TELEGRAM_CHAT_ID = "6700742710"
 
 # URL Config
 BASE_URL = "https://loteriadehoy.com/animalito/lottoactivo/resultados/{date}/"
@@ -214,3 +214,4 @@ def monitor_loop():
 
 if __name__ == "__main__":
     monitor_loop()
+
