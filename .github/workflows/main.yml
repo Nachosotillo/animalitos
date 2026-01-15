@@ -1,0 +1,36 @@
+name: Lotto Sniper Bot (Horario VET)
+
+on:
+  schedule:
+    # Cron sintaxis: minuto hora dia mes dia_semana
+    # Hora Venezuela (UTC-4). 
+    # 7:30 AM VET = 11:30 UTC
+    # 6:30 PM VET = 22:30 UTC
+    # Se ejecutará al minuto 30, desde la hora 11 hasta la 22 UTC.
+    - cron: '30 11-22 * * *'
+  
+  # Permite activarlo manualmente si quieres probarlo ya
+  workflow_dispatch:
+
+jobs:
+  run-sniper:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Descargar código del repositorio
+      uses: actions/checkout@v3
+      
+    - name: Instalar Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        
+    - name: Instalar librerías
+      run: |
+        pip install -r requirements.txt
+        
+    - name: Ejecutar Radar Bot
+      env:
+        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        TELEGRAM_CHAT_ID: ${{6700742710}}
+      run: python radar_bot.py
