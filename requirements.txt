@@ -1,0 +1,11 @@
+requests
+beautifulsoup4
+pandas
+aiohttp
+scipy
+numpy
+matplotlib
+seaborn
+scikit-learn
+statsmodels
+networkx
